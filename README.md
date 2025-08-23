@@ -1,2 +1,8 @@
 # Distributed-Systems-at-Home
-A hands-on project to explore distributed systems at home. It features async communication via a message queue, the Outbox pattern for reliable delivery, observability with Prometheus &amp; Grafana, and load testing with k6 to measure performance.
+A hands-on project to explore common topics in distributed systems:
+✅ Async communication between services via a message queue
+✅ Outbox pattern for reliable event delivery
+✅ Observability using Prometheus & Grafana
+✅ Load testing using k6
+✅ Deployment and orchestration on a Kubernetes (k8s) cluster
+
