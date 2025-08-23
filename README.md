@@ -1,4 +1,4 @@
-# Distributed-Systems-at-Home
+# Building Distributed System at Home
 A hands-on project to explore common topics in distributed systems:  
 ✅ Async communication between services via a message queue  
 ✅ Outbox pattern for reliable event delivery  
