@@ -1,0 +1,6 @@
+C:\Users\Abdelkrim NEFIS\source\repos\GrpcServiceA\GrpcServiceA\obj\Debug\net9.0\GrpcServiceA.csproj.AssemblyReference.cache
+C:\Users\Abdelkrim NEFIS\source\repos\GrpcServiceA\GrpcServiceA\obj\Debug\net9.0\GrpcServiceA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Abdelkrim NEFIS\source\repos\GrpcServiceA\GrpcServiceA\obj\Debug\net9.0\GrpcServiceA.AssemblyInfoInputs.cache
+C:\Users\Abdelkrim NEFIS\source\repos\GrpcServiceA\GrpcServiceA\obj\Debug\net9.0\GrpcServiceA.AssemblyInfo.cs
+C:\Users\Abdelkrim NEFIS\source\repos\GrpcServiceA\GrpcServiceA\obj\Debug\net9.0\GrpcServiceA.csproj.CoreCompileInputs.cache
+C:\Users\Abdelkrim NEFIS\source\repos\GrpcServiceA\GrpcServiceA\obj\Debug\net9.0\GrpcServiceA.MvcApplicationPartsAssemblyInfo.cache
