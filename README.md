@@ -1,5 +1,5 @@
 # Distributed-Systems-at-Home
-A hands-on project to explore common topics in distributed systems:
+A hands-on project to explore common topics in distributed systems:  
 ✅ Async communication between services via a message queue  
 ✅ Outbox pattern for reliable event delivery  
 ✅ Observability using Prometheus & Grafana  
