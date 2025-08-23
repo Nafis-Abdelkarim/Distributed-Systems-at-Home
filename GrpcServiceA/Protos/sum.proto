@@ -1,0 +1,22 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "GrpcServiceA";
+
+package sum;
+
+// The Sum service definition.
+service sum {
+  // Sends 2 numbers and sum them 
+  rpc SumTwoNumbers (AddRequest) returns (AddResponse);
+}
+
+// The request message containing the user's name.
+message AddRequest {
+  int64 number1 = 1;
+  int64 number2 = 2;
+}
+
+// The response message containing the greetings.
+message AddResponse {
+  int64 result = 1;
+}
