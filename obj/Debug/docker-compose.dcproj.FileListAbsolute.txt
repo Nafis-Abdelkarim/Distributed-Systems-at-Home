@@ -1,0 +1,15 @@
+C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\bin\Debug\GrpcServiceA.deps.json
+C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\bin\Debug\GrpcServiceA.runtimeconfig.json
+C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\bin\Debug\appsettings.Development.json
+C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\bin\Debug\appsettings.json
+C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\bin\Debug\GrpcServiceA.staticwebassets.endpoints.json
+C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\bin\Debug\GrpcServiceA.exe
+C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\bin\Debug\GrpcServiceA.dll
+C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\bin\Debug\Google.Protobuf.dll
+C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\bin\Debug\Grpc.Core.Api.dll
+C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\bin\Debug\Grpc.AspNetCore.Server.dll
+C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\bin\Debug\Grpc.Net.Common.dll
+C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\bin\Debug\GrpcServiceA.pdb
+C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\obj\Debug\docker-c.35A3FFBA.Up2Date

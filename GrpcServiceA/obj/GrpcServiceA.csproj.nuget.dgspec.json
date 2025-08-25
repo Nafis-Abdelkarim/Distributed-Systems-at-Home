@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Abdelkrim NEFIS\\source\\repos\\GrpcServiceA\\GrpcServiceA\\GrpcServiceA.csproj": {}
+    "C:\\Users\\Abdelkrim NEFIS\\Source\\Repos\\Distributed-Systems-at-Home\\GrpcServiceA\\GrpcServiceA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Abdelkrim NEFIS\\source\\repos\\GrpcServiceA\\GrpcServiceA\\GrpcServiceA.csproj": {
+    "C:\\Users\\Abdelkrim NEFIS\\Source\\Repos\\Distributed-Systems-at-Home\\GrpcServiceA\\GrpcServiceA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Abdelkrim NEFIS\\source\\repos\\GrpcServiceA\\GrpcServiceA\\GrpcServiceA.csproj",
+        "projectUniqueName": "C:\\Users\\Abdelkrim NEFIS\\Source\\Repos\\Distributed-Systems-at-Home\\GrpcServiceA\\GrpcServiceA.csproj",
         "projectName": "GrpcServiceA",
-        "projectPath": "C:\\Users\\Abdelkrim NEFIS\\source\\repos\\GrpcServiceA\\GrpcServiceA\\GrpcServiceA.csproj",
+        "projectPath": "C:\\Users\\Abdelkrim NEFIS\\Source\\Repos\\Distributed-Systems-at-Home\\GrpcServiceA\\GrpcServiceA.csproj",
         "packagesPath": "C:\\Users\\Abdelkrim NEFIS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Abdelkrim NEFIS\\source\\repos\\GrpcServiceA\\GrpcServiceA\\obj\\",
+        "outputPath": "C:\\Users\\Abdelkrim NEFIS\\Source\\Repos\\Distributed-Systems-at-Home\\GrpcServiceA\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
