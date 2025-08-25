@@ -1,0 +1,43 @@
+name: dockercompose10990867906000443458
+services:
+  grpcservicea:
+    build:
+      context: C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home
+      dockerfile: GrpcServiceA/Dockerfile
+    image: grpcservicea
+    networks:
+      default: null
+  grpcservices:
+    build:
+      context: C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home
+      dockerfile: GrpcServiceA/Dockerfile
+    container_name: grpc-service-a
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:50051
+      DOTNET_RUNNING_IN_CONTAINER: "true"
+      DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: "false"
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 50051
+        published: "50051"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\Abdelkrim NEFIS\AppData\Roaming/Microsoft/UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Abdelkrim NEFIS\AppData\Roaming/ASP.NET/Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose10990867906000443458_default

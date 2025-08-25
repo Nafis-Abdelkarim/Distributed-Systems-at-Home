@@ -1,6 +1,16 @@
 using GrpcServiceA.Services;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(50051, listenOptions =>
+    {
+        // Allow both HTTP/1.1 (for browsers) and HTTP/2 (for gRPC clients)
+        listenOptions.Protocols = HttpProtocols.Http2;
+    });
+});
 
 // Add services to the container.
 builder.Services.AddGrpc();
