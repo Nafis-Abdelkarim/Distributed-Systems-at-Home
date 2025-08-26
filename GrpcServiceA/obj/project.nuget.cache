@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qLaNoDSheIY=",
+  "dgSpecHash": "/Ukd8J7vzHE=",
   "success": true,
   "projectFilePath": "C:\\Users\\Abdelkrim NEFIS\\Source\\Repos\\Distributed-Systems-at-Home\\GrpcServiceA\\GrpcServiceA.csproj",
   "expectedPackageFiles": [
@@ -21,8 +21,11 @@
     "C:\\Users\\Abdelkrim NEFIS\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\Abdelkrim NEFIS\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Abdelkrim NEFIS\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.21.0\\microsoft.visualstudio.azure.containers.tools.targets.1.21.0.nupkg.sha512",
+    "C:\\Users\\Abdelkrim NEFIS\\.nuget\\packages\\rabbitmq.client\\6.7.0\\rabbitmq.client.6.7.0.nupkg.sha512",
     "C:\\Users\\Abdelkrim NEFIS\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
-    "C:\\Users\\Abdelkrim NEFIS\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\Abdelkrim NEFIS\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\Abdelkrim NEFIS\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\Abdelkrim NEFIS\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }

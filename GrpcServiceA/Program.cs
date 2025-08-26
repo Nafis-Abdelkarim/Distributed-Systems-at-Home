@@ -1,5 +1,8 @@
+using GrpcServiceA.Interfaces;
+using GrpcServiceA.Messaging;
 using GrpcServiceA.Services;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
+using RabbitMQ.Client;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +17,22 @@ builder.WebHost.ConfigureKestrel(options =>
 
 // Add services to the container.
 builder.Services.AddGrpc();
+
+builder.Services.AddScoped<IConnection>(sp =>
+{
+    var config = builder.Configuration.GetSection("RabbitMq");
+    var factory = new ConnectionFactory()
+    {
+        HostName = config["HostName"],
+        Port = int.Parse(config["port"]), //TODO
+        UserName = config["UserName"],
+        Password = config["Password"],
+        DispatchConsumersAsync = true
+    };
+    return factory.CreateConnection();
+});
+
+builder.Services.AddTransient<IMessageQueue, RabbitMqService>();
 
 var app = builder.Build();
 
