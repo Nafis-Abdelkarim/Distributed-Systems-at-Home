@@ -43,3 +43,4 @@ C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA\o
 C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA\obj\Debug\net9.0\GrpcServiceA.pdb
 C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA\obj\Debug\net9.0\GrpcServiceA.genruntimeconfig.cache
 C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA\obj\Debug\net9.0\ref\GrpcServiceA.dll
+C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA\bin\Debug\net9.0\RabbitMQ.Client.dll
