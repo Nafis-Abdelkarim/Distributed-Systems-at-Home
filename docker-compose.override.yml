@@ -19,9 +19,9 @@ services:
       - RabbitMq__Username=guest
       - RabbitMq__Password=guest
       - RabbitMq__VirtualHost=/
-    #volumes:
-      #- ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
-      #- ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro 
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro 
     depends_on:
       - rabbitmq   # Ensure RabbitMQ is up before this service starts
 

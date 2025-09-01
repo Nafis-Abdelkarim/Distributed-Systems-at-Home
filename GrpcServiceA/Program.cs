@@ -24,7 +24,7 @@ builder.Services.AddScoped<IConnection>(sp =>
     var factory = new ConnectionFactory()
     {
         HostName = config["HostName"],
-        Port = int.Parse(config["port"]), //TODO
+        Port = int.Parse(config["Port"]), //TODO
         UserName = config["UserName"],
         Password = config["Password"],
         DispatchConsumersAsync = true
