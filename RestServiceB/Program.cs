@@ -46,8 +46,8 @@ var app = builder.Build();
 
 if(app.Environment.IsDevelopment())
 {
-    //app.UseSwagger();
-    //app.UseSwaggerUI();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 // Add this temporary endpoint to test the connection
@@ -56,7 +56,20 @@ app.MapGet("/test-rabbitmq", (IConnection connection) =>
     return $"RabbitMQ connected: {connection.IsOpen}";
 });
 
-app.MapGet("/", () => "FileWriterService running and consuming RabbitMQ messages...");
+app.MapGet("/getSumResult", async (IMessageQueue messageQueueServices) =>
+{
+    //get result from the queue 
+    string? message = await messageQueueServices.GetLatestMessageFromQueueAsync();
+
+    if (message == null || !int.TryParse(message, out var newValue))
+    {
+        return Results.NotFound(new { message = "No valid message in queue" });
+    }
+
+    return Results.Ok(message);
+
+
+});
 
 
 app.Run();

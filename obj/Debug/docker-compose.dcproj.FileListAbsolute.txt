@@ -23,3 +23,4 @@ C:\Users\Abdelkrim NEFIS\source\repos\Distributed-Systems-at-Home\bin\Debug\Swas
 C:\Users\Abdelkrim NEFIS\source\repos\Distributed-Systems-at-Home\bin\Debug\Microsoft.OpenApi.dll
 C:\Users\Abdelkrim NEFIS\source\repos\Distributed-Systems-at-Home\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Abdelkrim NEFIS\source\repos\Distributed-Systems-at-Home\bin\Debug\RestServiceB.pdb
+C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
