@@ -1,30 +1,33 @@
 name: dockercompose10990867906000443458
 services:
-  grpcservicea:
+  grpc-service-a:
     build:
       context: C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home
       dockerfile: GrpcServiceA/Dockerfile
+    container_name: grpc-service-a
+    depends_on:
+      rabbitmq:
+        condition: service_started
+        required: true
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-      ASPNETCORE_HTTP_PORTS: "8080"
-      ASPNETCORE_HTTPS_PORTS: "8081"
-    image: grpcservicea
+      ASPNETCORE_URLS: http://+:50051
+      DOTNET_RUNNING_IN_CONTAINER: "true"
+      DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: "false"
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      RabbitMq__Host: rabbitmq
+      RabbitMq__Password: guest
+      RabbitMq__Username: guest
+      RabbitMq__VirtualHost: /
+    image: grpc-service-a
     networks:
       default: null
     ports:
       - mode: ingress
-        target: 8080
-        protocol: tcp
-      - mode: ingress
-        target: 8081
+        target: 50051
+        published: "50051"
         protocol: tcp
     volumes:
-      - type: bind
-        source: C:\Users\Abdelkrim NEFIS\AppData\Roaming/Microsoft/UserSecrets
-        target: /home/app/.microsoft/usersecrets
-        read_only: true
-        bind:
-          create_host_path: true
       - type: bind
         source: C:\Users\Abdelkrim NEFIS\AppData\Roaming/Microsoft/UserSecrets
         target: /root/.microsoft/usersecrets
@@ -33,7 +36,58 @@ services:
           create_host_path: true
       - type: bind
         source: C:\Users\Abdelkrim NEFIS\AppData\Roaming/ASP.NET/Https
-        target: /home/app/.aspnet/https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  rabbitmq:
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_DEFAULT_USER: guest
+    image: rabbitmq:3.13-management
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5672
+        published: "5672"
+        protocol: tcp
+      - mode: ingress
+        target: 15672
+        published: "15672"
+        protocol: tcp
+  rest-service-b:
+    build:
+      context: C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home
+      dockerfile: RestServiceB/Dockerfile
+    container_name: rest-service-b
+    depends_on:
+      rabbitmq:
+        condition: service_started
+        required: true
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:5000
+      DOTNET_RUNNING_IN_CONTAINER: "true"
+      DOTNET_SYSTEM_GLOBALIZATION_INVARIANT: "false"
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      RabbitMq__Host: rabbitmq
+      RabbitMq__Password: guest
+      RabbitMq__Username: guest
+      RabbitMq__VirtualHost: /
+    image: rest-service-b
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5000
+        published: "5000"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\Abdelkrim NEFIS\AppData\Roaming/Microsoft/UserSecrets
+        target: /root/.microsoft/usersecrets
         read_only: true
         bind:
           create_host_path: true

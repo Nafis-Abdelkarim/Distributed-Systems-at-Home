@@ -19,6 +19,7 @@ C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA\b
 C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA\bin\Debug\net9.0\Grpc.Net.Client.dll
 C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA\bin\Debug\net9.0\Grpc.Net.ClientFactory.dll
 C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA\bin\Debug\net9.0\Grpc.Net.Common.dll
+C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA\bin\Debug\net9.0\RabbitMQ.Client.dll
 C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA\obj\Debug\net9.0\GrpcServiceA.csproj.AssemblyReference.cache
 C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA\obj\Debug\net9.0\GrpcServiceA.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA\obj\Debug\net9.0\GrpcServiceA.AssemblyInfoInputs.cache
@@ -43,4 +44,3 @@ C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA\o
 C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA\obj\Debug\net9.0\GrpcServiceA.pdb
 C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA\obj\Debug\net9.0\GrpcServiceA.genruntimeconfig.cache
 C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA\obj\Debug\net9.0\ref\GrpcServiceA.dll
-C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA\bin\Debug\net9.0\RabbitMQ.Client.dll

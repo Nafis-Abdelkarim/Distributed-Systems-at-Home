@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Abdelkrim NEFIS\\Source\\Repos\\Distributed-Systems-at-Home\\GrpcServiceA\\GrpcServiceA.csproj": {}
+    "C:\\Users\\Abdelkrim NEFIS\\source\\repos\\Distributed-Systems-at-Home\\GrpcServiceA\\GrpcServiceA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Abdelkrim NEFIS\\Source\\Repos\\Distributed-Systems-at-Home\\GrpcServiceA\\GrpcServiceA.csproj": {
+    "C:\\Users\\Abdelkrim NEFIS\\source\\repos\\Distributed-Systems-at-Home\\GrpcServiceA\\GrpcServiceA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Abdelkrim NEFIS\\Source\\Repos\\Distributed-Systems-at-Home\\GrpcServiceA\\GrpcServiceA.csproj",
+        "projectUniqueName": "C:\\Users\\Abdelkrim NEFIS\\source\\repos\\Distributed-Systems-at-Home\\GrpcServiceA\\GrpcServiceA.csproj",
         "projectName": "GrpcServiceA",
-        "projectPath": "C:\\Users\\Abdelkrim NEFIS\\Source\\Repos\\Distributed-Systems-at-Home\\GrpcServiceA\\GrpcServiceA.csproj",
+        "projectPath": "C:\\Users\\Abdelkrim NEFIS\\source\\repos\\Distributed-Systems-at-Home\\GrpcServiceA\\GrpcServiceA.csproj",
         "packagesPath": "C:\\Users\\Abdelkrim NEFIS\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Abdelkrim NEFIS\\Source\\Repos\\Distributed-Systems-at-Home\\GrpcServiceA\\obj\\",
         "projectStyle": "PackageReference",
