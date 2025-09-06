@@ -14,7 +14,7 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=/.nuget/fallbackpackages
     volumes:
-      - C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA:/app:rw
+      - C:\Users\Abdelkrim NEFIS\source\repos\Distributed-Systems-at-Home\GrpcServiceA:/app:rw
       - C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home:/src:rw
       - C:\Users\Abdelkrim NEFIS\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\Abdelkrim NEFIS\.nuget\packages:/.nuget/packages:ro
@@ -33,8 +33,8 @@ services:
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet"
     tty: true
-  grpcservices:
-    image: grpcservices:dev
+  rest-service-b:
+    image: rest-service-b:dev
     build:
       args:
         LAUNCHING_FROM_VS: true
@@ -42,13 +42,13 @@ services:
       target: base
       labels:
         com.microsoft.created-by: "visual-studio"
-        com.microsoft.visual-studio.project-name: "GrpcServiceA"
+        com.microsoft.visual-studio.project-name: "RestServiceB"
     environment:
       - DOTNET_USE_POLLING_FILE_WATCHER=1
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=/.nuget/fallbackpackages
     volumes:
-      - C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA:/app:rw
+      - C:\Users\Abdelkrim NEFIS\source\repos\Distributed-Systems-at-Home\RestServiceB:/app:rw
       - C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home:/src:rw
       - C:\Users\Abdelkrim NEFIS\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\Abdelkrim NEFIS\.nuget\packages:/.nuget/packages:ro
@@ -63,7 +63,7 @@ services:
     entrypoint: "dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --wait"
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
-      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages  \"/app/bin/Debug/net9.0/GrpcServiceA.dll\""
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages  \"/app/bin/Debug/net9.0/RestServiceB.dll\""
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet"
     tty: true

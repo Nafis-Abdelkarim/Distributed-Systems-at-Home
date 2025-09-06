@@ -6,3 +6,9 @@ services:
     build:
         context: .
         dockerfile: GrpcServiceA/Dockerfile
+
+  rest-service-b:
+    image: rest-service-b
+    build:
+        context: .
+        dockerfile: RestServiceB/Dockerfile
