@@ -1,5 +1,6 @@
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using RestServiceB.Helper;
 using RestServiceB.NewFolder;
 using RestServiceB.ServicesB;
 using System.Text;
@@ -61,10 +62,13 @@ app.MapGet("/getSumResult", async (IMessageQueue messageQueueServices) =>
     //get result from the queue 
     string? message = await messageQueueServices.GetLatestMessageFromQueueAsync();
 
-    if (message == null || !int.TryParse(message, out var newValue))
+    if (message == null || !int.TryParse(message, out int newValue))
     {
         return Results.NotFound(new { message = "No valid message in queue" });
     }
+
+    ReadWriteFromTextFile fileHandler = new();
+    fileHandler.ReadAndUpdateLastSumValue(newValue);
 
     return Results.Ok(message);
 
