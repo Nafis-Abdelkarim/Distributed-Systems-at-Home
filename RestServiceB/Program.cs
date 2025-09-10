@@ -62,16 +62,12 @@ app.MapGet("/getSumResult", async (IMessageQueue messageQueueServices) =>
     //get result from the queue 
     string? message = await messageQueueServices.GetLatestMessageFromQueueAsync();
 
-    if (message == null || !int.TryParse(message, out int newValue))
-    {
-        return Results.NotFound(new { message = "No valid message in queue" });
-    }
+    int.TryParse(message, out int newValue);
 
     ReadWriteFromTextFile fileHandler = new();
-    fileHandler.ReadAndUpdateLastSumValue(newValue);
+    int totalSum = fileHandler.ReadAndUpdateLastSumValue(newValue);
 
-    return Results.Ok(message);
-
+    return Results.Ok($"The Total Sum is: {totalSum}");
 
 });
 

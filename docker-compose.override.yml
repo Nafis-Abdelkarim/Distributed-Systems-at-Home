@@ -46,6 +46,7 @@ services:
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro 
+      - ./RestServiceB/Source/lastSum.txt:/app/lastSum.txt
     depends_on:
         - rabbitmq   # Ensure RabbitMQ is up before this service starts 
 

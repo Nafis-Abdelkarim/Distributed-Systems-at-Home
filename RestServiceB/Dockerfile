@@ -27,4 +27,8 @@ RUN dotnet publish "RestServiceB.csproj" -c $BUILD_CONFIGURATION -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+
+# Copy your static file
+COPY RestServiceB/Source/lastSum.txt ./lastSum.txt
+
 ENTRYPOINT ["dotnet", "RestServiceB.dll"]

@@ -2,14 +2,28 @@
 {
     public class ReadWriteFromTextFile
     {
-        public void ReadAndUpdateLastSumValue(int lastSumFromQueueMessage)
+        private readonly string _filePath;
+
+        public ReadWriteFromTextFile()
         {
-            // Implementation for reading and writing to a static text file
-            int lastSumValue = int.Parse(File.ReadAllText("lastSum.txt"));
+            _filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lastSum.txt");
+        }
+
+        public int ReadAndUpdateLastSumValue(int lastSumFromQueueMessage)
+        {
+            int lastSumValue = 0;
+
+            if (File.Exists(_filePath))
+            {
+                lastSumValue = int.Parse(File.ReadAllText(_filePath));
+            }
 
             lastSumValue += lastSumFromQueueMessage;
 
-            File.WriteAllText("lastSum.txt", lastSumValue.ToString());
+            File.WriteAllText(_filePath, lastSumValue.ToString());
+
+            return lastSumValue;
         }
     }
+
 }
