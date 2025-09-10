@@ -5,3 +5,5 @@ dll/
 exe/
 pdb/
 cache/
+*.user
+*.suo

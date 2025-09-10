@@ -1,5 +1,6 @@
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using RestServiceB.Helper;
 using RestServiceB.NewFolder;
 using RestServiceB.ServicesB;
 using System.Text;
@@ -46,8 +47,8 @@ var app = builder.Build();
 
 if(app.Environment.IsDevelopment())
 {
-    //app.UseSwagger();
-    //app.UseSwaggerUI();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 // Add this temporary endpoint to test the connection
@@ -56,7 +57,19 @@ app.MapGet("/test-rabbitmq", (IConnection connection) =>
     return $"RabbitMQ connected: {connection.IsOpen}";
 });
 
-app.MapGet("/", () => "FileWriterService running and consuming RabbitMQ messages...");
+app.MapGet("/getSumResult", async (IMessageQueue messageQueueServices) =>
+{
+    //get result from the queue 
+    string? message = await messageQueueServices.GetLatestMessageFromQueueAsync();
+
+    int.TryParse(message, out int newValue);
+
+    ReadWriteFromTextFile fileHandler = new();
+    int totalSum = fileHandler.ReadAndUpdateLastSumValue(newValue);
+
+    return Results.Ok($"The Total Sum is: {totalSum}");
+
+});
 
 
 app.Run();

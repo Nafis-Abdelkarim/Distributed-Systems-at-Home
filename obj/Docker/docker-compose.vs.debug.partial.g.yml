@@ -14,7 +14,7 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=/.nuget/fallbackpackages
     volumes:
-      - C:\Users\Abdelkrim NEFIS\source\repos\Distributed-Systems-at-Home\GrpcServiceA:/app:rw
+      - C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\GrpcServiceA:/app:rw
       - C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home:/src:rw
       - C:\Users\Abdelkrim NEFIS\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\Abdelkrim NEFIS\.nuget\packages:/.nuget/packages:ro
@@ -48,7 +48,7 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       - NUGET_FALLBACK_PACKAGES=/.nuget/fallbackpackages
     volumes:
-      - C:\Users\Abdelkrim NEFIS\source\repos\Distributed-Systems-at-Home\RestServiceB:/app:rw
+      - C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\RestServiceB:/app:rw
       - C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home:/src:rw
       - C:\Users\Abdelkrim NEFIS\vsdbg\vs2017u5:/remote_debugger:rw
       - C:\Users\Abdelkrim NEFIS\.nuget\packages:/.nuget/packages:ro
