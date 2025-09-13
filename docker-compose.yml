@@ -12,3 +12,15 @@ services:
     build:
         context: .
         dockerfile: RestServiceB/Dockerfile
+
+  grpc-service-a.database:
+    image: postgres:latest
+    container_name: grpc-service-a.database
+    environment:
+      - POSTGRES_DB=GrpcServiceA_db
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./.containers/grpc-service-a-db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432

@@ -4,11 +4,23 @@ services:
     build:
       context: C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home
       dockerfile: GrpcServiceA/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+        LAUNCHING_FROM_VS: "true"
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: GrpcServiceA
     container_name: grpc-service-a
     depends_on:
       rabbitmq:
         condition: service_started
         required: true
+    entrypoint:
+      - dotnet
+      - --roll-forward
+      - Major
+      - /VSTools/DistrolessHelper/DistrolessHelper.dll
+      - --wait
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: http://+:50051
@@ -20,6 +32,12 @@ services:
       RabbitMq__Username: guest
       RabbitMq__VirtualHost: /
     image: grpc-service-a
+    labels:
+      com.microsoft.visual-studio.project-name: GrpcServiceA
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages  "/app/GrpcServiceA.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
     networks:
       default: null
     ports:
@@ -27,17 +45,67 @@ services:
         target: 50051
         published: "50051"
         protocol: tcp
+    tty: true
     volumes:
       - type: bind
-        source: C:\Users\Abdelkrim NEFIS\AppData\Roaming/Microsoft/UserSecrets
+        source: C:\Users\Abdelkrim NEFIS\AppData\Roaming\Microsoft\UserSecrets
         target: /root/.microsoft/usersecrets
         read_only: true
         bind:
           create_host_path: true
       - type: bind
-        source: C:\Users\Abdelkrim NEFIS\AppData\Roaming/ASP.NET/Https
+        source: C:\Users\Abdelkrim NEFIS\AppData\Roaming\ASP.NET\Https
         target: /root/.aspnet/https
         read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Abdelkrim NEFIS\vsdbg\vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Abdelkrim NEFIS\AppData\Roaming\ASP.NET\Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Abdelkrim NEFIS\AppData\Roaming\Microsoft\UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: D:\Visual Studio\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net6.0
+        target: /VSTools
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: D:\Visual Studio\Common7\IDE\CommonExtensions\Microsoft\HotReload
+        target: /HotReloadAgent
+        read_only: true
+        bind:
+          create_host_path: true
+  grpc-service-a.database:
+    container_name: grpc-service-a.database
+    environment:
+      POSTGRES_DB: GrpcServiceA_db
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: admin
+    image: postgres:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5432
+        published: "5432"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\.containers\grpc-service-a-db
+        target: /var/lib/postgresql/data
         bind:
           create_host_path: true
   rabbitmq:
@@ -61,11 +129,23 @@ services:
     build:
       context: C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home
       dockerfile: RestServiceB/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+        LAUNCHING_FROM_VS: "true"
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: RestServiceB
     container_name: rest-service-b
     depends_on:
       rabbitmq:
         condition: service_started
         required: true
+    entrypoint:
+      - dotnet
+      - --roll-forward
+      - Major
+      - /VSTools/DistrolessHelper/DistrolessHelper.dll
+      - --wait
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: http://+:5000
@@ -77,6 +157,12 @@ services:
       RabbitMq__Username: guest
       RabbitMq__VirtualHost: /
     image: rest-service-b
+    labels:
+      com.microsoft.visual-studio.project-name: RestServiceB
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages  "/app/RestServiceB.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
     networks:
       default: null
     ports:
@@ -84,15 +170,16 @@ services:
         target: 5000
         published: "5000"
         protocol: tcp
+    tty: true
     volumes:
       - type: bind
-        source: C:\Users\Abdelkrim NEFIS\AppData\Roaming/Microsoft/UserSecrets
+        source: C:\Users\Abdelkrim NEFIS\AppData\Roaming\Microsoft\UserSecrets
         target: /root/.microsoft/usersecrets
         read_only: true
         bind:
           create_host_path: true
       - type: bind
-        source: C:\Users\Abdelkrim NEFIS\AppData\Roaming/ASP.NET/Https
+        source: C:\Users\Abdelkrim NEFIS\AppData\Roaming\ASP.NET\Https
         target: /root/.aspnet/https
         read_only: true
         bind:
@@ -100,6 +187,35 @@ services:
       - type: bind
         source: C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\RestServiceB\Source\lastSum.txt
         target: /app/lastSum.txt
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Abdelkrim NEFIS\vsdbg\vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Abdelkrim NEFIS\AppData\Roaming\ASP.NET\Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Abdelkrim NEFIS\AppData\Roaming\Microsoft\UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: D:\Visual Studio\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net6.0
+        target: /VSTools
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: D:\Visual Studio\Common7\IDE\CommonExtensions\Microsoft\HotReload
+        target: /HotReloadAgent
+        read_only: true
         bind:
           create_host_path: true
 networks:
