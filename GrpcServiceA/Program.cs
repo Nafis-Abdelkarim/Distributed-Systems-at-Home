@@ -1,7 +1,9 @@
 using GrpcServiceA.Database.Migration;
 using GrpcServiceA.Interfaces;
+using GrpcServiceA.InterfacesA;
 using GrpcServiceA.Messaging;
 using GrpcServiceA.Services;
+using GrpcServiceA.ServicesA.Outbox;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
 using RabbitMQ.Client;
@@ -36,16 +38,25 @@ builder.Services.AddScoped<IConnection>(sp =>
 
 builder.Services.AddTransient<IMessageQueue, RabbitMqService>();
 
+builder.Services.AddScoped<IOutboxService, OutboxService>();
+
 builder.Services.AddDbContext<AppDbContext>(
     options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 
 var app = builder.Build();
 
-if(app.Environment.IsDevelopment())
+// Ensure database is created
+using (var scope = app.Services.CreateScope())
 {
-    app.ApplyMigrations();
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.EnsureCreated();
 }
+
+//if (app.Environment.IsDevelopment())
+//{
+//    app.ApplyMigrations();
+//}
 
 // Configure the HTTP request pipeline.
 app.MapGrpcService<SumService>();

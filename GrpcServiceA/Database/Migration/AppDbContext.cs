@@ -5,11 +5,14 @@ namespace GrpcServiceA.Database.Migration
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {}
+        private readonly IConfiguration _configuration;
+        public AppDbContext(DbContextOptions<AppDbContext> options, IConfiguration configuration) : base(options) 
+        {
+            _configuration = configuration;
+        }
 
         // Define your DbSets here
         public DbSet<OutboxMessage> OutboxMessages => Set<OutboxMessage>();
-
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
