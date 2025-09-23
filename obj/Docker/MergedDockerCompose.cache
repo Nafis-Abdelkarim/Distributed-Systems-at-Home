@@ -40,6 +40,26 @@ services:
         read_only: true
         bind:
           create_host_path: true
+  grpc-service-a.database:
+    container_name: grpc-service-a.database
+    environment:
+      POSTGRES_DB: GrpcServiceA_db
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: admin
+    image: postgres:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5432
+        published: "5432"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\.containers\grpc-service-a-db
+        target: /var/lib/postgresql/data
+        bind:
+          create_host_path: true
   rabbitmq:
     container_name: rabbitmq
     environment:
@@ -95,6 +115,11 @@ services:
         source: C:\Users\Abdelkrim NEFIS\AppData\Roaming/ASP.NET/Https
         target: /root/.aspnet/https
         read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Abdelkrim NEFIS\Source\Repos\Distributed-Systems-at-Home\RestServiceB\Source\lastSum.txt
+        target: /app/lastSum.txt
         bind:
           create_host_path: true
 networks:
