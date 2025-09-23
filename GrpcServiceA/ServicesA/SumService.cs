@@ -3,11 +3,6 @@ using GrpcServiceA.Database;
 using GrpcServiceA.Database.Entities;
 using GrpcServiceA.Database.Migration;
 using GrpcServiceA.Interfaces;
-using GrpcServiceA.ServicesA.Outbox;
-using Microsoft.EntityFrameworkCore;
-using System.Text.Json;
-using System;
-using GrpcServiceA.InterfacesA;
 
 namespace GrpcServiceA.Services
 {
@@ -16,7 +11,7 @@ namespace GrpcServiceA.Services
         private readonly ILogger<SumService> _logger;
         private readonly IMessageQueue _messageQueue;
         private readonly AppDbContext _context;
-        public SumService(ILogger<SumService> logger, IMessageQueue messageQueue, IOutboxService outboxService, AppDbContext context)
+        public SumService(ILogger<SumService> logger, IMessageQueue messageQueue, AppDbContext context)
         {
             _logger = logger;
             _messageQueue = messageQueue;

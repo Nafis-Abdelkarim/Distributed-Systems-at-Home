@@ -1,6 +1,5 @@
 using GrpcServiceA.Database.Migration;
 using GrpcServiceA.Interfaces;
-using GrpcServiceA.InterfacesA;
 using GrpcServiceA.Messaging;
 using GrpcServiceA.Services;
 using GrpcServiceA.ServicesA.Outbox;
@@ -38,11 +37,13 @@ builder.Services.AddScoped<IConnection>(sp =>
 
 builder.Services.AddTransient<IMessageQueue, RabbitMqService>();
 
-builder.Services.AddScoped<IOutboxService, OutboxService>();
-
 builder.Services.AddDbContext<AppDbContext>(
     options => options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
+
+builder.Services.AddHostedService<OutboxBackgroundService>();
+
+builder.Services.AddScoped<OutboxProcessor>();
 
 var app = builder.Build();
 
