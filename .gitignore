@@ -8,3 +8,7 @@ cache/
 *.user
 *.suo
 .container/
+
+# Critical additions to prevent NuGet path issues
+[Nn]u[Gg]et.config.user
+*.csproj.nuget.*

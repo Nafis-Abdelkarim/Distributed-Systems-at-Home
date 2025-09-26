@@ -1,23 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Abdelkrim NEFIS\\Source\\Repos\\Distributed-Systems-at-Home\\GrpcServiceA\\GrpcServiceA.csproj": {}
+    "C:\\Users\\DELL\\source\\repos\\Distributed-Systems-at-Home\\grpcservicea\\GrpcServiceA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Abdelkrim NEFIS\\Source\\Repos\\Distributed-Systems-at-Home\\GrpcServiceA\\GrpcServiceA.csproj": {
+    "C:\\Users\\DELL\\source\\repos\\Distributed-Systems-at-Home\\grpcservicea\\GrpcServiceA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Abdelkrim NEFIS\\Source\\Repos\\Distributed-Systems-at-Home\\GrpcServiceA\\GrpcServiceA.csproj",
+        "projectUniqueName": "C:\\Users\\DELL\\source\\repos\\Distributed-Systems-at-Home\\grpcservicea\\GrpcServiceA.csproj",
         "projectName": "GrpcServiceA",
-        "projectPath": "C:\\Users\\Abdelkrim NEFIS\\Source\\Repos\\Distributed-Systems-at-Home\\GrpcServiceA\\GrpcServiceA.csproj",
-        "packagesPath": "C:\\Users\\Abdelkrim NEFIS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Abdelkrim NEFIS\\Source\\Repos\\Distributed-Systems-at-Home\\GrpcServiceA\\obj\\",
+        "projectPath": "C:\\Users\\DELL\\source\\repos\\Distributed-Systems-at-Home\\grpcservicea\\GrpcServiceA.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DELL\\source\\repos\\Distributed-Systems-at-Home\\grpcservicea\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Abdelkrim NEFIS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\source\\repos\\Distributed-Systems-at-Home\\grpcservicea\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -25,7 +23,6 @@
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,7 +41,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -96,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
